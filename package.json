@@ -2,12 +2,12 @@
   "name": "code-push-server",
   "version": "0.0.1",
   "description": "Source code for the CodePush service API",
-  "main": "server.js",
+  "main": "./script/server.js",
   "scripts": {
-    "start": "node server.js",
-    "start:env": "node -r dotenv/config server.js dotenv_config_path=.env dotenv_config_silent=true",
+    "start": "node ./bin/script/server.js",
+    "start:env": "node -r dotenv/config ./bin/script/server.js dotenv_config_path=.env dotenv_config_silent=true",
     "clean": "rimraf bin",
-    "build": "npm install typescript --save-dev && tsc && shx cp -r ./script/views ./bin/script",
+    "build": "tsc && shx cp -r ./script/views ./bin/script",
     "prettier": "prettier --write \"./**/*.ts\"",
     "lint": "npx eslint ./script/**/*.ts",
     "lint:fix": "npx eslint ./script/**/*.ts --fix"
@@ -69,6 +69,6 @@
     "rimraf": "^5.0.1",
     "shx": "^0.3.4",
     "supertest": "^6.3.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.0.4"
   }
 }
